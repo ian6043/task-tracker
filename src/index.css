@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: sans-serif;
 }
 
 .container {
@@ -15,9 +15,11 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+
+  border: 2px solid rgb(108, 163, 108);
   padding: 30px;
   border-radius: 5px;
+  background-color: rgb(190, 190, 190);
 }
 
 .header {
@@ -59,9 +61,10 @@ body {
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  border-left: 5px solid green;
 }
 
-.task.reminder {
+.task.highlight {
   border-left: 5px solid green;
 }
 
@@ -104,9 +107,4 @@ body {
 .form-control-check input {
   flex: 2;
   height: 20px;
-}
-
-footer {
-  margin-top: 30px;
-  text-align: center;
 }

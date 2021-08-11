@@ -3,7 +3,8 @@ const AddTask = ({onAdd}) => {
     
     const [text, setText] = useState('')
     const [day, setDay] = useState('')
-    const [reminder, setReminder] = useState(false)
+    const [time, setTime] = useState('')
+    const [highlight, setHighlight] = useState(false)
     
     const onSubmit =(e)=>{
         e.preventDefault()
@@ -13,10 +14,10 @@ const AddTask = ({onAdd}) => {
             return
         }
 
-        onAdd({text,day,reminder})
+        onAdd({text,day,time,reminder: highlight})
 
         setDay('')
-        setReminder(false)
+        setHighlight(false)
         setText('')
     }
     return (
@@ -30,23 +31,31 @@ const AddTask = ({onAdd}) => {
                     onChange={(e)=> setText(e.target.value)}
                 />
             </div>
-            <div className='form-control'>
-                <label>Day Time</label>
+            <div className = 'form-control'>   
+            <label>Day</label>
                 <input 
-                    type='text' 
-                    placeholder='Add Day Time'
+                    type='date' 
                     value={day} 
                     onChange={(e)=> setDay(e.target.value)}
+                />        
+            </div> 
+            <div className = 'form-control'>
+                <label for="appt">Time</label>
+                <input 
+                    type='time' 
+                    id="appt" name="appt"
+                    value={time} 
+                    onChange={(e)=>setTime(e.target.value)} 
                 />
             </div>
             <div className='form-control form-control-check'>
-                <label>Set Reminder</label>
+                <label>Highlight Task</label>
                 <input 
                     type='checkbox'
-                    checked ={reminder}
+                    checked ={highlight}
                     placeholder='Set Reminder' 
-                    value={reminder}
-                    onChange={(e)=> setReminder(e.currentTarget.checked)}
+                    value={highlight}
+                    onChange={(e)=> setHighlight(e.currentTarget.checked)}
                 />
             </div>
 
